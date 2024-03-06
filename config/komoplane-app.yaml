@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: komoplane
+  namespace: argocd  
+spec:
+  destination:
+    name: ''
+    namespace: komoplane
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://helm-charts.komodor.io'
+    targetRevision: 0.1.4
+    chart: komoplane
+    helm:
+      parameters:
+        - name: service.type
+          value: NodePort
+  project: default
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
