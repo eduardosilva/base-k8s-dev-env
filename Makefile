@@ -73,11 +73,11 @@ minikube-start:
 minikube-install-addons:
 	 minikube addons enable ingress
 
-run: minikube-start 
+server-start: minikube-start minikube-install-addons argocd-install
 
-clean: minikube-delete
+server-stop: minikube-delete
 
 minikube-delete: 
 	minikube delete
 
-.PHONY: argocd-install argocd-waiting argocd-print-url argocd-print-password argocd-port-forward  argocd-login  argocd-open-ui argocd-clean crossplane-configure-repo  crossplane-install  crossplane-clean minikube-start run  clean minikube-delete  
+.PHONY: argocd-install argocd-waiting argocd-print-url argocd-print-password argocd-port-forward argocd-login argocd-open-ui argocd-clean crossplane-configure-repo crossplane-install crossplane-clean minikube-start server-start server-stop minikube-delete minikube-install-addons

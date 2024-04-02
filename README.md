@@ -44,6 +44,8 @@ Forwarding from 127.0.0.1:8080 -> 8080
 Forwarding from [::1]:8080 -> 8080
 ```
 
+> Only necessary if you are not using ingress
+
 ### 6. argocd-login
 
 Logs in to the ArgoCD server using the admin credentials.
@@ -72,11 +74,11 @@ Cleans up the Crossplane and ArgoCD installations by deleting the Crossplane app
 
 Starts the Minikube cluster with specified resources.
 
-### 13. run
+### 13. server-start
 
-Starts the Minikube cluster. Alias for `minikube-start`.
+Starts enviroment
 
-### 14. clean
+### 14. server-stop
 
 Cleans up the Minikube cluster by deleting it.
 
