@@ -66,9 +66,12 @@ crossplane-clean:
 
 minikube-start:
 	# using virtualbox driver with vpn
-	minikube start --memory=5120 --cpus=4 --vm-driver=virtualbox
+	# minikube start --memory=5120 --cpus=4 --vm-driver=virtualbox
 
-	# minikube start --memory=5120 --cpus=4 
+	 minikube start --memory=5120 --cpus=4 
+	 
+minikube-install-addons:
+	 minikube addons enable ingress
 
 run: minikube-start 
 
